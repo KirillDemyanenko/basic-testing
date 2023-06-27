@@ -26,7 +26,7 @@ describe('simpleCalculator tests', () => {
     );
     expect(simpleCalculator({ a: 35, b: 35, action: Action.Subtract })).toBe(0);
     expect(simpleCalculator({ a: -1, b: -100, action: Action.Subtract })).toBe(
-      -99,
+      99,
     );
     expect(simpleCalculator({ a: 100, b: 1, action: Action.Subtract })).toBe(
       99,
