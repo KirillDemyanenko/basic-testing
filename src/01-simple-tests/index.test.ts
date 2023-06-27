@@ -11,7 +11,7 @@ describe('simpleCalculator tests', () => {
     expect(simpleCalculator({ a: 100, b: 1, action: Action.Add })).toBe(101);
     expect(simpleCalculator({ a: 0, b: 0, action: Action.Add })).toBe(0);
     expect(simpleCalculator({ a: 4, b: 7, action: Action.Add })).toBe(11);
-  });
+  }, 3000);
 
   test('should subtract two numbers', () => {
     expect(simpleCalculator({ a: 5, b: 5, action: Action.Subtract })).toBe(0);
@@ -33,7 +33,7 @@ describe('simpleCalculator tests', () => {
     );
     expect(simpleCalculator({ a: 0, b: 0, action: Action.Subtract })).toBe(0);
     expect(simpleCalculator({ a: 4, b: 7, action: Action.Subtract })).toBe(-3);
-  });
+  }, 3000);
 
   test('should multiply two numbers', () => {
     expect(simpleCalculator({ a: 5, b: 5, action: Action.Multiply })).toBe(25);
@@ -57,7 +57,7 @@ describe('simpleCalculator tests', () => {
     );
     expect(simpleCalculator({ a: 0, b: 0, action: Action.Multiply })).toBe(0);
     expect(simpleCalculator({ a: 4, b: 7, action: Action.Multiply })).toBe(28);
-  });
+  }, 3000);
 
   test('should divide two numbers', () => {
     expect(simpleCalculator({ a: 5, b: 5, action: Action.Divide })).toBe(1);
@@ -75,7 +75,7 @@ describe('simpleCalculator tests', () => {
     expect(simpleCalculator({ a: 100, b: 1, action: Action.Divide })).toBe(100);
     expect(simpleCalculator({ a: 0, b: 0, action: Action.Divide })).toBe(NaN);
     expect(simpleCalculator({ a: 42, b: 7, action: Action.Divide })).toBe(6);
-  });
+  }, 3000);
 
   test('should exponentiate two numbers', () => {
     expect(simpleCalculator({ a: 5, b: 5, action: Action.Exponentiate })).toBe(
@@ -105,13 +105,13 @@ describe('simpleCalculator tests', () => {
     expect(simpleCalculator({ a: 42, b: 7, action: Action.Exponentiate })).toBe(
       230539333248,
     );
-  });
+  }, 3000);
 
   test('should return null for invalid action', () => {
     expect(simpleCalculator({ a: 100, b: 0, action: 'Main' })).toBe(null);
     expect(simpleCalculator({ a: 100, b: 0, action: 'Plus' })).toBe(null);
     expect(simpleCalculator({ a: 100, b: 0, action: 'Minus' })).toBe(null);
-  });
+  }, 10000);
 
   test('should return null for invalid arguments', () => {
     expect(simpleCalculator({ a: '100', b: 0, action: 'Main' })).toBe(null);
@@ -119,5 +119,5 @@ describe('simpleCalculator tests', () => {
     expect(simpleCalculator({ a: 'dog', b: 0, action: 'Minus' })).toBe(null);
     expect(simpleCalculator({ a: '7', b: 0, action: 'Minus' })).toBe(null);
     expect(simpleCalculator({ a: '7', b: '0', action: 'Minus' })).toBe(null);
-  });
+  }, 6000);
 });
